@@ -1,5 +1,14 @@
+
 <div class="movies-categories">
-    <h1>
-        {{category}} Movies
-    </h1>
+    <div class="movies" *ngFor="let movie of movies">
+      
+        <img src="http://image.tmdb.org/t/p/w185{{movie.poster_path}}" />
+        <div>
+            <h2>
+                {{movie.title}}
+            </h2>
+        </div>
+       
+        <!-- <app-list-movies [data]="movies"></app-list-movies> -->
+    </div>
 </div>
