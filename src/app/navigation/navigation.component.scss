@@ -1,0 +1,18 @@
+nav {
+    padding: 1.5em;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin: 0 1em;
+    }
+    .active {
+        color: orangered;
+        font-weight: 800;
+        cursor: default;
+    }
+}
