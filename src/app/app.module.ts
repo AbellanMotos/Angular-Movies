@@ -1,15 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { MoviesCategoryComponent } from './movies-category/movies-category.component';
-
 import { MoviesApiService } from './services/movies-api.service';
-
-import {HttpClientModule} from '@angular/common/http';
 import { ListMoviesComponent } from './list-movies/list-movies.component'
+
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { ListMoviesComponent } from './list-movies/list-movies.component'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    InfiniteScrollModule,
   ],
   providers: [MoviesApiService],
   bootstrap: [AppComponent]

@@ -13,13 +13,14 @@ export class MoviesApiService {
   constructor(private http: HttpClient) {
 
   }
-  getCategory(cat) {
+
+getCategory(cat, page: number = 1) {
 
 const validCategories = ['top_rated', 'upcoming', 'popular'];
 
 if (validCategories.includes(cat)){
   return this.http
-  .get(`${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}${this.spanish}`)
+  .get(`${this.baseUrlApi}/movie/${cat}?api_key=${this.apikey}${this.spanish}&page=${page}`)
   .toPromise()
 
 } else { 

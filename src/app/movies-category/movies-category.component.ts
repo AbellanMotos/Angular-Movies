@@ -12,6 +12,7 @@ import { MoviesApiService } from '../services/movies-api.service';
 export class MoviesCategoryComponent implements OnInit {
   category: string;
   movies: object[] = [];
+  page = 1;
 
   constructor(private route: ActivatedRoute, private api: MoviesApiService, private router: Router) { }
 
@@ -35,4 +36,21 @@ export class MoviesCategoryComponent implements OnInit {
     });
   }
 
+  nextPage(){
+    let cat = this.category.replace(' ', '_');
+
+    this.api
+      .getCategory(cat, ++this.page)
+      .then((data: any) => {
+          console.log(data)
+          this.movies = [...this.movies, ...data.results];
+        }
+      ).catch(error => {
+        if (error === 'No valid category'){
+          //redirect
+          this.router.navigate(['movies/top_rated'])
+        } else {
+          alert('404 try again motherfocka')
+        }})
+  }
 }
