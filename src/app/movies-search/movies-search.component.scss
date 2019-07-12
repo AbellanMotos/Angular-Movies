@@ -1,0 +1,12 @@
+.search {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    input {
+        all: unset;
+        color: black;
+        font-size: 4em;
+        border-bottom: 1px solid orangered;
+        
+    }
+}

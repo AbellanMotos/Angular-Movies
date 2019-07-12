@@ -1,8 +1,7 @@
-<input type="text" [(ngModel)]="query" (keyup)="searchMovies()" placeholder="Buscar">
-<div
-    infiniteScroll
-    [infiniteScrollDistance]="1"
-    [infiniteScrollThrottle]="200"
-    (scrolled)="nextPage()">
+<div class="search">
+
+    <input type="text" [(ngModel)]="query" (keyup)="searchMovies()" placeholder="Search movie">
+    <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="200" (scrolled)="nextPage()">
+    </div>
 </div>
 <app-list-movies [data]="moviesFound"></app-list-movies>
