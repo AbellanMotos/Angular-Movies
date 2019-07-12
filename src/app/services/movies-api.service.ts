@@ -15,7 +15,6 @@ export class MoviesApiService {
   }
 
 getCategory(cat, page: number = 1) {
-
 const validCategories = ['top_rated', 'upcoming', 'popular'];
 
 if (validCategories.includes(cat)){
@@ -29,8 +28,9 @@ if (validCategories.includes(cat)){
  
 }
 
-searchMovies(query) {
-    let url = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}&language=es-ES`;
-    return this.http.get(url);
+searchMovies(query, page: number = 1) {
+    let searchUrl = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}${this.spanish}&page=${page}`;
+    return this.http.get(searchUrl)
+    .toPromise();
   }
 }

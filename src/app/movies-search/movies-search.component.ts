@@ -10,15 +10,24 @@ import { HttpClient } from '@angular/common/http';
 export class MoviesSearchComponent {
   moviesFound: object[] = [];
   query: string = '';
+  page = 1;
   
   constructor(private api: MoviesApiService) { }
 
   searchMovies() {
-  this.api.searchMovies(this.query).subscribe((data: any) => {
-  this.moviesFound = data.results
-  console.log(data);
+  this.api.searchMovies(this.query, this.page)
+  .then((data: any) => {
+  this.moviesFound = [...data.results]
+  console.log(this.query);
+  });
+  
+}
+nextPage(){
+  this.api.searchMovies(this.query, ++this.page)
+  .then((data: any) => {
+  this.moviesFound = [...this.moviesFound, ...data.results]
+  
   });
 
  }
-
 }
