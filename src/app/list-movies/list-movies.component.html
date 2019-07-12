@@ -1,12 +1,12 @@
 <div class="movies" >
 
-      <a class="movie" 
+      <div class="movie" 
       *ngFor="let movie of data" 
       routerLink="/movie/{{movie.id}}"
-      [ngStyle]="{'background-image':'url(http://image.tmdb.org/t/p/w185'+ movie.backdrop_path + ')'}">         
+      [ngStyle]="{'background-image':'url(http://image.tmdb.org/t/p/w1280'+ movie.backdrop_path + ')'}">         
         <h2>
             {{movie.title}}
         </h2>
         
-        </a>
-    </div>
+        </div>
+</div>

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { MoviesApiService } from './services/movies-api.service';
 import { ListMoviesComponent } from './list-movies/list-movies.component'
 
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MoviesSearchComponent } from './movies-search/movies-search.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     NavigationComponent,
     MoviesCategoryComponent,
     ListMoviesComponent,
+    MoviesSearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     InfiniteScrollModule,
+    FormsModule,
   ],
   providers: [MoviesApiService],
   bootstrap: [AppComponent]

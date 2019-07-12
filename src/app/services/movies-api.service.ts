@@ -26,7 +26,11 @@ if (validCategories.includes(cat)){
 } else { 
   return Promise.reject('No valid category')
 }
+ 
+}
 
-    
+searchMovies(query) {
+    let url = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}&language=es-ES`;
+    return this.http.get(url);
   }
 }

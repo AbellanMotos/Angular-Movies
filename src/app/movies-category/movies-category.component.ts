@@ -19,6 +19,7 @@ export class MoviesCategoryComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.category = params.category.replace('_', ' ');
+      this.page = 1;
 
       this.api
       .getCategory(params.category)
@@ -31,7 +32,7 @@ export class MoviesCategoryComponent implements OnInit {
           //redirect
           this.router.navigate(['movies/top_rated'])
         } else {
-          alert('404 try again motherfocka')
+          alert('404 try again')
         }})
     });
   }
@@ -50,7 +51,7 @@ export class MoviesCategoryComponent implements OnInit {
           //redirect
           this.router.navigate(['movies/top_rated'])
         } else {
-          alert('404 try again motherfocka')
+          alert('404 try again')
         }})
   }
 }

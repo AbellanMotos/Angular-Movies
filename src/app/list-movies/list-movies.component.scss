@@ -1,21 +1,30 @@
 .movies {
+    padding: 5em;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 430px));
+    grid-gap: 5em;
+    justify-content: center;
+    background: lightgrey;
+
     
 }
 
 .movie {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: orangered;
-    padding: 1em;
+    padding: 1em; 
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     width: 500px;
     height: 300px;
-    margin: 1.2em;
     
+
+    h2 {
+        max-width: 8em;
+        display: flex;
+        flex-flow: column wrap;
+    }
     &::before {
         content: '';
         background: rgba(0,0,0,0.6);
@@ -29,7 +38,7 @@
     }
 
 &:hover::before{
-    background: rgba(0,0,0,0.4)
+    background: rgba(0,0,0,0.2)
 }
 
    & > * {
