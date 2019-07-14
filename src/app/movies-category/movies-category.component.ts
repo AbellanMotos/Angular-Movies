@@ -43,8 +43,7 @@ export class MoviesCategoryComponent implements OnInit {
     this.api
       .getCategory(cat, ++this.page)
       .then((data: any) => {
-          console.log(data)
-          this.movies = [...this.movies, ...data.results];
+      this.movies = [...this.movies, ...data.results];
         }
       ).catch(error => {
         if (error === 'No valid category'){

@@ -17,5 +17,14 @@
     
 </div>
 
+<h3>Peliculas similares:</h3>
+<div
+infiniteScroll
+[infiniteScrollDistance]="1"
+[infiniteScrollThrottle]="200"
+(scrolled)="nextPage()">
+<app-list-movies [data]="similarMovies"></app-list-movies>
+</div>
+
 
 

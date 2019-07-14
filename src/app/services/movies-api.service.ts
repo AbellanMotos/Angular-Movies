@@ -15,7 +15,7 @@ export class MoviesApiService {
 
   }
 
-getCategory(cat, page: number = 1) {
+  getCategory(cat, page: number = 1) {
 const validCategories = ['top_rated', 'upcoming', 'popular'];
 
 if (validCategories.includes(cat)){
@@ -27,8 +27,7 @@ if (validCategories.includes(cat)){
   return Promise.reject('No valid category')
 }
  
-}
-
+  }
   searchMovies(query, page: number = 1) {
     const searchUrl = `${this.baseUrlApi}/search/movie?api_key=${this.apikey}&query=${query}${this.spanish}&page=${page}`;
     return this.http.get(searchUrl)
@@ -39,5 +38,11 @@ if (validCategories.includes(cat)){
     return this.http.get(detailUrl)
     .toPromise();
   }
+  getSimilarMovies(id, page: number = 1) {
+    const similarMovies = `${this.baseUrlApi}/movie/${id}/similar?api_key=${this.apikey}${this.spanish}`;
+    return this.http.get(similarMovies)
+    .toPromise();
+  }
+
 }
 
