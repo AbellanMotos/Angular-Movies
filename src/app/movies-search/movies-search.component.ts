@@ -23,7 +23,7 @@ export class MoviesSearchComponent {
   });
   
 }
-nextPage(){
+  nextPage(){
   this.api.searchMovies(this.query, ++this.page)
   .then((data: any) => {
     this.moviesFound = [...this.moviesFound, ...data.results];

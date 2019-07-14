@@ -1,0 +1,18 @@
+<div class="movieCard">
+<div class="movieText">
+    
+    <span *ngFor="let genre of data.genres">{{genre.name}}</span>
+    <h1>{{data.title}}</h1>
+    <p>{{data.overview}}</p>
+    <div class="vote">{{data.vote_average}}</div>
+    <p>{{data.release_date}}</p> 
+    <div class="img">
+    <img src="https://image.tmdb.org/t/p/w500/{{data.poster_path}}" alt="cartel">
+    </div>
+    
+    
+</div>
+
+
+
+</div>
