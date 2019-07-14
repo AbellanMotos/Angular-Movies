@@ -17,8 +17,7 @@ export class MovieDetailComponent implements OnInit {
     this.id = this.id.value.id;
     
     this.api.getMovieDetail(this.id).then((data: any) => {
-     this.data = data;
-      
+    this.data = data;
     });
   }
 

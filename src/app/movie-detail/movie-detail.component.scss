@@ -1,0 +1,32 @@
+
+.movieCard {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1 {
+        font-size: 4em;
+        position: relative;
+        
+    }
+    .vote, .date {
+        font-size: 2em;
+        margin: 0;
+    }
+    .movieText{
+        display: flex;
+       
+        span {
+            margin-right: 0.6em;
+            margin-top: 0.5em;
+            background: black;
+            text-transform: uppercase;
+            padding:0.5em;
+            border-radius: 5px;
+            color: orangered;
+            max-height: 3em;
+            position: sticky;
+        }
+        
+    }
+}
