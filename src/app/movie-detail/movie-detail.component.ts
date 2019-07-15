@@ -12,26 +12,27 @@ export class MovieDetailComponent implements OnInit {
   id: any;
   similarMovies: object[] = [];
   page = 1;
-  constructor(private api: MoviesApiService, private route: ActivatedRoute) {}
+  constructor(private api: MoviesApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.id = this.route.params;
-    this.id = this.id.value.id;
+    this.route.params.subscribe(params => {
+      this.id = params.id;
+      this.api.getMovieDetail(params.id)
+      this.api.getMovieDetail(this.id).then((data: any) => {
+        this.data = data;
 
-    this.api.getMovieDetail(this.id).then((data: any) => {
-    this.data = data;
-
-
-    this.api.getSimilarMovies(this.id, this.page).then((data: any) => {
-      this.similarMovies = data.results;
-      this.page = 1;
-    }); });
+        this.api.getSimilarMovies(this.id, this.page).then((data: any) => {
+          this.similarMovies = data.results;
+          this.page = 1;
+        });
+      });
+    });
   }
 
 
-nextPage() {
-  this.api.getSimilarMovies(this.id, ++this.page).then((data: any) => {
-  this.similarMovies = [...this.similarMovies, ...data.results];
-  });
-}
+  nextPage() {
+    this.api.getSimilarMovies(this.id, ++this.page).then((data: any) => {
+      this.similarMovies = [...this.similarMovies, ...data.results];
+    });
+  }
 }
