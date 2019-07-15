@@ -6,7 +6,10 @@
     flex-direction: row nowrap;
     display: flex;
     justify-content: center;
-    background-color: #222;
+    background-image: url("../../assets/headercine.jpg");
+    background-size: cover;
+    border-bottom: solid;
+    border-bottom-color: orangered;
     .one {
         font-family: 'Indie Flower', cursive;
         a {

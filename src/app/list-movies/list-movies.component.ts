@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   templateUrl: './list-movies.component.html',
   styleUrls: ['./list-movies.component.scss']
 })
-export class ListMoviesComponent{
-  @Input() data: object[]
+export class ListMoviesComponent {
+  @Input() data: object[];
   constructor() { }
 
 }
