@@ -1,0 +1,7 @@
+<div
+infiniteScroll
+    [infiniteScrollDistance]="1"
+    [infiniteScrollThrottle]="200"
+    (scrolled)="nextPage()">
+    <app-list-movies [data]="genreMovies"></app-list-movies>
+</div>

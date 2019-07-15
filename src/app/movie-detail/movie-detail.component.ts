@@ -16,10 +16,12 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
+      window.scrollTo({top: 0, behavior: 'smooth'});
       this.id = params.id;
-      this.api.getMovieDetail(params.id)
+      this.api.getMovieDetail(params.id);
       this.api.getMovieDetail(this.id).then((data: any) => {
         this.data = data;
+        console.log(this.data);
 
         this.api.getSimilarMovies(this.id, this.page).then((data: any) => {
           this.similarMovies = data.results;

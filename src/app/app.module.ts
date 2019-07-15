@@ -13,6 +13,7 @@ import { ListMoviesComponent } from './list-movies/list-movies.component'
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MoviesSearchComponent } from './movies-search/movies-search.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MoviesGenresComponent } from './movies-genres/movies-genres.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
     ListMoviesComponent,
     MoviesSearchComponent,
     MovieDetailComponent,
+    MoviesGenresComponent,
   ],
   imports: [
     BrowserModule,

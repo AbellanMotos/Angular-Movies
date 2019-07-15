@@ -39,8 +39,15 @@ if (validCategories.includes(cat)){
     .toPromise();
   }
   getSimilarMovies(id, page: number = 1) {
-    const similarMovies = `${this.baseUrlApi}/movie/${id}/similar?api_key=${this.apikey}${this.spanish}`;
+    const similarMovies = `${this.baseUrlApi}/movie/${id}/similar?api_key=${this.apikey}${this.spanish}&page=${page}`;
     return this.http.get(similarMovies)
+    .toPromise();
+  }
+
+  getGenreMovie(id, page: number = 1) {
+    const genre = 
+    `https://api.themoviedb.org/3/discover/movie?api_key=${this.apikey}${this.spanish}&sort_by=popularity.desc&with_genres=${id}&page=${page}`;
+    return this.http.get(genre)
     .toPromise();
   }
 

@@ -24,21 +24,19 @@ export class MoviesCategoryComponent implements OnInit {
       this.api
       .getCategory(params.category)
       .then((data: any) => {
-          console.log(data)
-          this.movies = data.results
+          this.movies = data.results;
         }
       ).catch(error => {
-        if (error === 'No valid category'){
-          //redirect
-          this.router.navigate(['movies/top_rated'])
+        if (error === 'No valid category') {
+          this.router.navigate(['movies/top_rated']);
         } else {
-          alert('404 try again')
-        }})
+          alert('404 try again');
+        }});
     });
   }
 
-  nextPage(){
-    let cat = this.category.replace(' ', '_');
+  nextPage() {
+    const cat = this.category.replace(' ', '_');
 
     this.api
       .getCategory(cat, ++this.page)
@@ -46,11 +44,10 @@ export class MoviesCategoryComponent implements OnInit {
       this.movies = [...this.movies, ...data.results];
         }
       ).catch(error => {
-        if (error === 'No valid category'){
-          //redirect
-          this.router.navigate(['movies/top_rated'])
+        if (error === 'No valid category') {
+             this.router.navigate(['movies/top_rated']);
         } else {
-          alert('404 try again')
-        }})
+          alert('404 try again');
+        }});
   }
 }
