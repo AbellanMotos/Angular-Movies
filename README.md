@@ -1,4 +1,12 @@
-# AngularMovies
+## Angular Movies
+
+Project of movies from API with Angular
+
+## Demo
+
+[Demo](https://abellanmotos.github.io/Angular-Movies/movies/top_rated)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
