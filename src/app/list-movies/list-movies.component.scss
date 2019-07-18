@@ -43,7 +43,7 @@
         z-index: 1;
         position: relative;
     }
-    @media (max-width: 400px) {
+    @media (max-width: 380px) {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
         background-size: cover;
