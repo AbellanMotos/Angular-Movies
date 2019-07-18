@@ -1,34 +1,47 @@
-
 .movieCard {
-    padding: 1em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 2em;
 
-    h1 {
-        font-size: 4em;
-        position: relative;
-        
+  >* {
+    flex: 2.5;
+    min-width: 300px;
+  }
+
+  .poster {
+    flex: 1;
+
+    img {
+      width: 100%;
     }
-    .vote, .date {
-        font-size: 2em;
-        margin: 0;
-        display: inline-flex;
-    }
-    .movieText{
-        display: flex;
-       
-        span {
-            margin-right: 0.6em;
-            margin-top: 0.5em;
-            background: black;
-            text-transform: uppercase;
-            padding:0.5em;
-            border-radius: 5px;
-            color: orangered;
-            max-height: 3em;
-            display: inline-block;
-        }
-        
-    }
+  }
+
+  span {
+    margin-right: 0.6em;
+    margin-top: 0.5em;
+    background: black;
+    text-transform: uppercase;
+    padding: 0.5em;
+    border-radius: 5px;
+    color: orangered;
+    max-height: 3em;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 4em;
+    position: relative;
+
+  }
+
+  img {
+    width: 70%;
+    box-shadow: 32px 20px 60px 6px rgba(247, 120, 10, 1);
+  }
+
+  .vote,
+  .date {
+    font-weight: bold;
+  }
+
 }

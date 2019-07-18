@@ -1,10 +1,10 @@
 .movies {
     padding: 5em;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
     grid-gap: 5em;
     justify-content: center;
     background: lightgrey;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
 
     
 }
@@ -17,7 +17,7 @@
     position: relative;
     height: 300px; 
     
-
+    
     h2 {
         max-width: 8em;
         display: flex;
@@ -34,13 +34,19 @@
         z-index: 0;
         transition: all 300ms linear;
     }
-
-&:hover::before{
-    background: rgba(0,0,0,0.2)
-}
-
-   & > * {
-       z-index: 1;
-       position: relative;
-   }
+    
+    &:hover::before{
+        background: rgba(0,0,0,0.2)
+    }
+    
+    & > * {
+        z-index: 1;
+        position: relative;
+    }
+    @media (max-width: 400px) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        background-size: cover;
+        
+    }
 }

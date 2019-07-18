@@ -40,4 +40,8 @@ nav {
         width: 5%;
         
     }
+    @media(max-width: 400px) {
+        padding: 1em 1em 0.2em 1em;
+    }
+   
 }

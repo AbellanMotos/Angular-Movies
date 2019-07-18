@@ -1,24 +1,27 @@
 <div class="movieCard" *ngIf="data">
 
-    <h1>{{data.title}}</h1>
-
-    <div class="movieText">
+    
+    <div class="data">
+            <h1>{{data.title}}</h1>
         <span *ngFor="let genre of data.genres" routerLink="/movies/genres/{{genre.id}}">
             {{genre.name}}</span>
-        <p>{{data.overview}}</p>
+            <p>{{data.overview}}</p>
+            
+                <p class="vote">Nota media: {{data.vote_average}}</p>
+                <p class="date">Fecha de estreno: {{data.release_date}}</p>
     </div>
 
-    <p class="vote">Nota media: {{data.vote_average}}</p>
-    <p class="date">Fecha de estreno: {{data.release_date}}</p>
-
     <div class="img">
-        <img src="https://image.tmdb.org/t/p/w500/{{data.poster_path}}" alt="cartel">
+        <img src="https://image.tmdb.org/t/p/w1280/{{data.poster_path}}" alt="cartel">
     </div>
 
 
 </div>
 
-<h3>Peliculas similares:</h3>
-<div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="200" (scrolled)="nextPage()">
-    <app-list-movies [data]="similarMovies"></app-list-movies>
+<div class="similar" *ngIf="similarMovies.length > 0">
+
+    <h3 >Peliculas similares:</h3>
+    <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="200" (scrolled)="nextPage()">
+        <app-list-movies [data]="similarMovies"></app-list-movies>
+    </div>
 </div>
