@@ -8,7 +8,7 @@
         <p>{{data.overview}}</p>
 
         <p class="vote">Nota media: {{data.vote_average}} <ngx-stars [readonly]="true" [maxStars]="10"
-                [initialStars]="data.vote_average" color="blue"></ngx-stars>
+                [initialStars]="data.vote_average" color=" #061539"></ngx-stars>
         </p>
         <p class="date">Fecha de estreno: {{data.release_date}}</p>
         <p *ngIf="data.homepage"><a href="{{data.homepage}}" target="_blank" rel="noopener noreferrer">Web
