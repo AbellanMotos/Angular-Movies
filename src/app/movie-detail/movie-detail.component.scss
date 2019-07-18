@@ -19,13 +19,14 @@
   span {
     margin-right: 0.6em;
     margin-top: 0.5em;
-    background: black;
+    background: grey;
     text-transform: uppercase;
     padding: 0.5em;
     border-radius: 5px;
-    color: orangered;
+    color: blue;
     max-height: 3em;
     display: inline-block;
+    border: 1px solid blue;
   }
 
   h1 {
@@ -36,7 +37,7 @@
 
   img {
     width: 70%;
-    box-shadow: 32px 20px 60px 6px rgba(247, 120, 10, 1);
+    box-shadow: 32px 20px 60px 6px blue;
   }
 
   .vote,

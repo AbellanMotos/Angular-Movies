@@ -6,7 +6,20 @@
         all: unset;
         color: black;
         font-size: 4em;
-        border-bottom: 1px solid orangered;
+        border-bottom: 1px solid blue;
         
+    }
+    @media (max-width: 425px){
+        display: flex;
+        justify-content: center;
+        padding: 2em;
+        input {
+            all: unset;
+            color: black;
+            font-size: 1em;
+            border-bottom: 1px solid blue;
+            
+        }
+
     }
 }

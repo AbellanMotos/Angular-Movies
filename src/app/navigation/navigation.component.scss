@@ -9,12 +9,12 @@
     background-image: url("../../assets/headercine.jpg");
     background-size: cover;
     border-bottom: solid;
-    border-bottom-color: orangered;
+    border-bottom-color: blue;
     .one {
         font-family: 'Indie Flower', cursive;
         a {
             text-decoration: none;
-            color: orangered;
+            color: blue;
             
         }
     }
@@ -32,15 +32,16 @@ nav {
         margin: 0 1em 0 0;
     }
     .active {
-        color: orangered;
+        color: blue;
         font-weight: 800;
         cursor: default;
     }
     img {
-        width: 5%;
+       width: 2em;
+       
         
     }
-    @media(max-width: 400px) {
+    @media(max-width: 425px) {
         padding: 1em 1em 0.2em 1em;
     }
    
