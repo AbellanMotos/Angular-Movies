@@ -1,14 +1,18 @@
 <div class="movieCard" *ngIf="data">
 
-    
+
     <div class="data">
-            <h1>{{data.title}}</h1>
+        <h1>{{data.title}}</h1>
         <span *ngFor="let genre of data.genres" routerLink="/movies/genres/{{genre.id}}">
             {{genre.name}}</span>
-            <p>{{data.overview}}</p>
-            
-                <p class="vote">Nota media: {{data.vote_average}}</p>
-                <p class="date">Fecha de estreno: {{data.release_date}}</p>
+        <p>{{data.overview}}</p>
+
+        <p class="vote">Nota media: {{data.vote_average}} <ngx-stars [readonly]="true" [maxStars]="10"
+                [initialStars]="data.vote_average" color="blue"></ngx-stars>
+        </p>
+        <p class="date">Fecha de estreno: {{data.release_date}}</p>
+        <p *ngIf="data.homepage"><a href="{{data.homepage}}" target="_blank" rel="noopener noreferrer">Web
+                oficial</a></p>
     </div>
 
     <div class="img">
@@ -20,8 +24,11 @@
 
 <div class="similar" *ngIf="similarMovies.length > 0">
 
-    <h3 >Peliculas similares:</h3>
+    <h3>Peliculas similares:</h3>
     <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="200" (scrolled)="nextPage()">
         <app-list-movies [data]="similarMovies"></app-list-movies>
     </div>
+</div>
+<div class="notSimilar" *ngIf="similarMovies.length === 0">
+    <h3>No encontramos películas similares</h3>
 </div>

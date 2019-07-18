@@ -6,7 +6,7 @@
     "start": "ng serve --open",
     "build": "ng build --prod --output-path docs --base-href /Angular-Movies/",
     "postbuild": "cp docs/index.html docs/404.html",
-    "deploy":"npm run build; git add .; git commit -m 'build created'; git push origin master",
+    "deploy": "npm run build; git add .; git commit -m 'build created'; git push origin master",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "~8.0.1",
     "@angular/router": "~8.0.1",
     "ngx-infinite-scroll": "^7.2.0",
+    "ngx-stars": "^1.4.3",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"

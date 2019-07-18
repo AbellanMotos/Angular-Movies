@@ -10,12 +10,13 @@
 }
 
 .movie {
-    color: blue;
+    color: white;
     padding: 1em; 
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     height: 300px; 
+    box-shadow: 10px 20px 20px 6px blue;
     
     
     h2 {
@@ -25,7 +26,7 @@
     }
     &::before {
         content: '';
-        background: rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.7);
         position: absolute;
         top:0;
         left: 0;
