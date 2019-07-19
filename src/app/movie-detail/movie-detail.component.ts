@@ -16,7 +16,7 @@ export class MovieDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       this.id = params.id;
       this.api.getMovieDetail(params.id);
       this.api.getMovieDetail(this.id).then((data: any) => {

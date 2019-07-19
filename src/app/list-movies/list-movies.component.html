@@ -1,12 +1,25 @@
-<div class="movies" >
-
-      <div class="movie" 
-      *ngFor="let movie of data" 
-      routerLink="/movie/{{movie.id}}"
-      [ngStyle]="{'background-image':'url(http://image.tmdb.org/t/p/w1280'+ movie.backdrop_path + ')'}">         
-        <h2>
-            {{movie.title}}
-        </h2>
-        
-        </div>
+<div class="movies">
+  
+  <div  *ngFor="let movie of data" routerLink="/movie/{{movie.id}}">
+    <div class="movie" *ngIf="movie.backdrop_path === null" [ngStyle]="{'background-image': 'url(assets/nophoto.jpg)'}">
+      <h2>
+        {{movie.title}}
+      </h2>
+    </div>
+    
+    
+    
+    <div routerLink="/movie/{{movie.id}}">
+      <div class="movie" *ngIf="movie.backdrop_path !== null"
+      [ngStyle]="{'background-image':'url(http://image.tmdb.org/t/p/w1280'+ movie.backdrop_path + ')'}">
+      <h2>
+        {{movie.title}}
+      </h2>
+    </div>
+    
+    
+    
+    
+  </div>
+  </div>
 </div>

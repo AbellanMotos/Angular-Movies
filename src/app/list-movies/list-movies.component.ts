@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
 export class ListMoviesComponent {
   @Input() data: object[];
   constructor() { }
-
+  
 }
