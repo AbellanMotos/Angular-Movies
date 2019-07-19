@@ -10,34 +10,45 @@
 
   .poster {
     flex: 1;
-
+    
     img {
       width: 100%;
-    }
+      box-shadow: 32px 20px 60px 6px #061539;}
+    
   }
 
   span {
     margin-right: 0.6em;
     margin-top: 0.5em;
-    background: white;
     text-transform: uppercase;
     padding: 0.5em;
     border-radius: 5px;
-    color:  #061539;
     max-height: 3em;
     display: inline-block;
-    border: 1px solid  #061539;
   }
-
+  
+  .genre {
+    border: 1px solid  #061539;
+    background: white;
+    color:  #061539;
+    
+  }
+  
   h1 {
     font-size: 4em;
     position: relative;
-
+    
   }
+  
+  .prod {
+    display: inline-block;
+    padding: 0.5em;
 
-  img {
-    width: 70%;
-    box-shadow: 32px 20px 60px 6px #061539;
+    
+    img {
+    max-width: 100px;
+
+    }
   }
 
   .vote,

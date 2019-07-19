@@ -3,35 +3,41 @@
 
     <div class="data">
         <h1>{{data.title}}</h1>
-        <span *ngFor="let genre of data.genres" routerLink="/movies/genres/{{genre.id}}">
+        <div *ngIf="prod !== 0">
+            <div class="prod" *ngFor="let prod of data.production_companies">
+                 <img *ngIf="prod.logo_path !== null" src="https://image.tmdb.org/t/p/w500/{{prod.logo_path}}"></div>
+        </div>
+        <span class="genre" *ngFor="let genre of data.genres" routerLink="/movies/genres/{{genre.id}}">
             {{genre.name}}</span>
         <p>{{data.overview}}</p>
 
-        <p class="vote">Nota media: {{data.vote_average}} <ngx-stars [readonly]="true" [maxStars]="10"
-                [initialStars]="data.vote_average" color=" #061539"></ngx-stars>
+        <p class="vote">Nota media: {{data.vote_average}} 
+            <ngx-stars [readonly]="true" 
+            [maxStars]="10"
+            [initialStars]="data.vote_average" color=" #061539"></ngx-stars>
         </p>
         <p class="date">Fecha de estreno: {{data.release_date}}</p>
-        <p *ngIf="data.homepage"><a href="{{data.homepage}}" target="_blank" rel="noopener noreferrer">Web
+        <p *ngIf="data.homepage"><a href="{{data.homepage}}" 
+            target="_blank" rel="noopener noreferrer">Web
                 oficial</a></p>
     </div>
 
-    <div class="img" >
+    <div class="poster">
         <img src="https://image.tmdb.org/t/p/w1280/{{data.poster_path}}" alt="cartel">
     </div>
-    <!-- <div class="img" *ngIf="data.poster_path === null">
-        <img src="../../assets/nophoto.jpg" alt="cartel">
-    </div>
- -->
 
 </div>
 
 <div class="similar" *ngIf="similarMovies.length > 0">
 
     <h3>Peliculas similares:</h3>
-    <div infiniteScroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="200" (scrolled)="nextPage()">
+    <div infiniteScroll [infiniteScrollDistance]="1" 
+    [infiniteScrollThrottle]="200" 
+    (scrolled)="nextPage()">
         <app-list-movies [data]="similarMovies"></app-list-movies>
     </div>
 </div>
+
 <div class="notSimilar" *ngIf="similarMovies.length === 0">
     <h3>No encontramos películas similares</h3>
 </div>
